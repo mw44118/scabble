@@ -1,0 +1,64 @@
+h1
+{
+    color:gray;
+    font-variant:small-caps;
+    background-color:#CCCCCC;
+    border:3px solid gray;
+    padding:5px;
+    text-align:center;
+}
+
+body
+{
+    font-family:Verdana, sans;
+    padding:10px;
+}
+
+div#adcol
+{
+    width:180px;
+    float:left;
+    margin:5px;
+}
+
+div#about
+{
+    width:40%;
+    border:3px solid gray;
+    float:right;
+    padding:5px;
+    margin:5px;
+    background-color:#CCCCCC;
+    vertical-align:top;
+}
+div#answersdiv, div#formbox
+{
+    width:50%;
+    border:3px solid gray;
+    background-color:#CCCCCC;
+    margin:5px;
+    padding:5px;
+}
+div#mycontent
+{
+    margin-left:200px;
+}
+div.box
+{
+height:30px;
+}
+div.box label
+{
+    width:20em;
+    float:left;
+}
+div.box input[type="text"]
+{
+    float:right;
+    width:10em;
+}
+div#formbox input[type="button"]
+{
+    color:gray;
+    border:2px solid gray;
+}
