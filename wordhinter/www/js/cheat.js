@@ -7,9 +7,10 @@ var cheat = function (raw_pattern, tiles)
     var pattern = "^" + raw_pattern.toUpperCase() + "$";
     // var pattern = ".*" + raw_pattern.toUpperCase() + ".*";
 
+
     /* Now automatically replace all the dots with our tiles, as long as we got tiles. */
     if (tiles) {
-        pattern = pattern.replace(/\./g, "[" + tiles + "]");
+        pattern = pattern.replace(/\./g, "[" + tiles.toUpperCase() + "]");
     }
 
     var searcher = new RegExp(pattern);
@@ -21,6 +22,11 @@ var cheat = function (raw_pattern, tiles)
         if (searcher.test(really_long_wordlist[i])) {
             matching_words.push(really_long_wordlist[i]);
         }
+
+        if (matching_words.length >= 50) {
+            return matching_words;
+        }
+
     }
 
     return matching_words;

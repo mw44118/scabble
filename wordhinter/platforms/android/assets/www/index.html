@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+<title>Word Skunk</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Word Skunk</h1>
+
+<div class="form-group">
+
+<p>
+<label>
+PATTERN
+</label>
+<input type="text" id="raw_pattern" class="form-control"
+    placeholder="A... to find 4-tile words starting with A"
+    data-bind="value: raw_pattern"
+/>
+
+<p>
+<label>
+TILES
+</label>
+<input type="text" id="tiles" class="form-control"
+    placeholder="AABBCC"
+    data-bind="value: tiles"
+/>
+
+<p>
+<button class="btn btn-primary"
+    data-bind="click:cheat"
+>CHEAT</button>
+
+</div>
+
+<p>
+<div id="answers">
+<h2><span data-bind="text: number_of_matching_words"></span> matching words</h2>
+<ul class="list-inline" data-bind="foreach: matching_words">
+<li>
+<span data-bind="text: $data"></span>
+</li>
+</ul>
+</div>
+
+</div><!-- closes div class="container" -->
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type='text/javascript' src='js/knockout-3.0.0.js'></script>
+<script type="text/javascript" src="js/cheat.js"></script>
+<script type="text/javascript" src="js/wordlist.js"></script>
+
+<script type="text/javascript">
+
+function myViewModel () {
+
+    var self = this;
+    self.raw_pattern = '';
+    self.tiles =  '';
+    self.matching_words = ko.observableArray([]);
+
+    self.number_of_matching_words = ko.computed(function () {
+
+        return self.matching_words().length;
+    });
+
+    self.cheat = function () {
+
+        var matching_words = cheat(
+            self.raw_pattern,
+            self.tiles);
+
+        self.matching_words(matching_words);
+    };
+
+};
+
+$(function () {
+    ko.applyBindings(new myViewModel());
+});
+</script>
+
+</body>
+</html>
