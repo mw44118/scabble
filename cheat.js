@@ -36,7 +36,7 @@ var cheat = function ()
 
 var doublecheck = function (pattern, tiles, word) {
     /* Make sure that we really can make the word out of our tiles. */
-    
+
     /*
 *
 *   if word is AAAAZ and the pattern was ....Z and the tiles were ABCDE, then
