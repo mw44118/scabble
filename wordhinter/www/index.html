@@ -43,7 +43,9 @@ TILES
 />
 
 <p>
-<button id="cheat" class="btn btn-primary">CHEAT</button>
+<button class="btn btn-primary"
+    data-bind="click:cheat"
+>CHEAT</button>
 
 </div>
 
@@ -68,38 +70,31 @@ TILES
 
 <script type="text/javascript">
 
-/*
 function myViewModel () {
-    this.raw_pattern = '';
-    this.tiles =  '';
-    this.matching_words = ko.observableArray();
-};
-*/
 
-var myViewModel = {
-    raw_pattern:'',
-    tiles:'',
-    matching_words:ko.observableArray()
+    var self = this;
+    self.raw_pattern = '';
+    self.tiles =  '';
+    self.matching_words = ko.observableArray();
+
+    self.cheat = function () {
+
+        var matching_words = cheat(
+            self.raw_pattern,
+            self.tiles);
+
+        // console.debug(matching_words);
+
+        self.matching_words(matching_words);
+
+    };
+
 };
 
 $(function () {
 
-    // ko.applyBindings(new myViewModel());
-    ko.applyBindings(myViewModel);
+    ko.applyBindings(new myViewModel());
 
-    $("#cheat").on('click', function () {
-
-        var matching_words = cheat(
-            myViewModel.raw_pattern,
-            myViewModel.tiles);
-
-        console.debug(matching_words);
-
-        console.debug('got ' + matching_words.length + ' matching words!');
-
-        myViewModel.matching_words(matching_words);
-
-    });
 });
 </script>
 

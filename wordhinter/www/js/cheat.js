@@ -1,10 +1,8 @@
 var cheat = function (raw_pattern, tiles)
 {
 
-    // cheat("b...y", "aavvcc")
-
-    console.debug('raw_pattern is ' + raw_pattern);
-    console.debug('tiles is ' + tiles);
+    // cheat("b...y", "arm")
+    // ["barmy"]
 
     var pattern = "^" + raw_pattern.toUpperCase() + "$";
     // var pattern = ".*" + raw_pattern.toUpperCase() + ".*";
