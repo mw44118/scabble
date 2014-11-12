@@ -1,4 +1,4 @@
-/home/matt/checkouts/scabble/wordhinter/platforms/android/gen/com/two16software/wordskunk/R.java \
+/home/matt/checkouts/scabble/wordhinter/platforms/android/gen/com/two16software/wordskunk2/R.java \
  : /home/matt/checkouts/scabble/wordhinter/platforms/android/res/xml/config.xml \
 /home/matt/checkouts/scabble/wordhinter/platforms/android/res/drawable/icon.png \
 /home/matt/checkouts/scabble/wordhinter/platforms/android/res/drawable-hdpi/icon.png \
